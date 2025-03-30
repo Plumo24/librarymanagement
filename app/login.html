@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/styles.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="bg-slate-100 h-screen pt-[120px]">
+        <div class="mx-8">
+            <div class="bg-white px-6 py-7 lg:w-[400px] w-[310px] mx-auto rounded-lg  ">
+                <h1 class="text-center font-bold text-lg mb-4 text-black">LOGIN</h1>
+                <form action="../backend/user_login.php" method="post" >
+                    <label for="username" class="text-lg text-black font-semibold">Username</label>
+                    <div class="w-full bg-slate-100 p-1">
+                        <input type="text" name="username" placeholder="Enter Username" class="w-full outline-hidden px-1">
+                    </div>
+                    <label for="password" class="text-lg text-black font-semibold">Password</label>
+                    <div class="w-full bg-slate-100 p-1 mb-2">
+                        <input type="password" name="password" placeholder="Enter Password" class="w-full outline-hidden px-1">
+                    </div>
+                    <label for="password" class="text-lg text-black font-semibold">Role</label>
+                    <div class="w-full bg-slate-100 p-1 mb-4">
+                        <select name="role" id="" class="w-full outline-hidden px-1">
+                            <option value="" >Select Role</option>
+                            <option value="admin" class="text-black">Admin</option>
+                            <option value="user" class="text-black">User</option>
+                        </select>
+                    </div>
+                    <div class="mb-5">
+                        <a href="" class="text-black font-semibold">Forgot Password?</a>
+                    </div>
+                    <div class=" bg-black lg:w-[100px]  mx-auto text-center lg:px-2 lg:py-2  rounded-lg ">
+                        <button class=" lg:text-lg  text-[18px] font-bold text-white lg:px-0 lg:py-0 px-3 py-3 cursor-pointer" >Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

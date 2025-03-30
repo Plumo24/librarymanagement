@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./css/styles.css" rel="stylesheet">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div class="bg-slate-100 h-screen">
+        <!--Side Bar-->
+        <div class="bg-primary h-screen fixed lg:w-[220px] w-full px-4 py-4 sidebar lg:left-0  left-[-1000px]  lg:top-0 top-14 z-50">
+            <div class="flex justify-end mb-2 cursor-pointer lg:hidden" onclick="openSidebar()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="flex gap-2 mb-5">
+                <div>
+                    <img src="./images/Lib_icon.png" alt="" class="w-10">
+                </div>
+                <div>
+                   <h3 class="text-sm font-semibold"> Library Management System</h3>
+                </div>
+                
+            </div>
+
+           <div class="flex  flex-col px-6 h-[85%]  justify-between">
+                 <div>
+                    <ul class=" space-y-7">
+                        <li><a href="Admin.html" class="font-semibold">Dashboard</a></li>
+                        <li><a href="manageBooks.html" class="font-semibold">Book Management</a></li>
+                        <li><a href="manageUser.html" class="font-semibold">User Management</a></li>
+                        <li><a href="" class="font-semibold">Borrowing and Returns</a></li>
+                    </ul>
+                 </div>
+
+                <div class="  ">
+                     <a href="login.html" class="text-lg font-semibold">Logout</a>
+                </div>
+           </div>
+
+        </div>
+
+
+        <!--header-->
+        <div class=" h-[58px] bg-white lg:ml-[220px] mb-4 z-50 px-5 fixed w-full ">
+           <div class="pt-3">
+            <h1 class="text-xl  font-semibold">Welcome Admin</h1>
+           </div>
+           <div class="bg-primary px-3 py-1  absolute top-3 rounded cursor-pointer  lg:right-[250px] right-[30px] lg:hidden" onclick="openSidebar()" >
+            <i class="fa-solid fa-bars text-l"></i>
+        
+           </div>
+        </div>
+
+        <!--Main Body-->
+        <div class="lg:ml-[220px] ml-0 grid lg:grid-cols-3 grid-cols-1 gap-5 px-5 relative top-[58px] py-5 "> 
+            <div class="bg-primary px-4 py-4 rounded-lg ">
+                <h1 class="text-lg font-semibold">Total Books Availabe</h1>
+                <p class="font-semibold">1000</p>
+            </div>
+            <div class="bg-secondary p-4 rounded-lg">
+                <h1 class="text-lg font-semibold">Total Registered Users</h1>
+                <p class="font-semibold">1000</p>
+            </div>
+            <div class="bg-body p-4 rounded-lg">
+                <h1 class="text-lg font-semibold">Total Borowed Books</h1>
+                <p class="font-semibold">1000</p>
+            </div>
+        </div>
+
+        <div class="relative top-[100px] lg:ml-[220px] px-5  ml-0">
+           <div>
+            <h1 class="mb-4 text-lg font-semibold text-center">Recently Added Users</h1>
+           </div>
+            <div class="mb-5 lg:overflow-auto overflow-x-scroll" >
+                <table class="mx-auto " >
+                    <thead class="bg-primary">
+                        <tr>
+                            <th class="px-1 py-2">Full Name</th>
+                            <th class="px-1 py-2">Email</th>
+                            <th class="px-3 py-2">Phone Number</th>
+                            <th class="px-1 py-2">Day Registered</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody class="bg-white">
+                        <tr>
+                            <td class="px-2 py-2">Emmanuel Moses</td>
+                            <td class="px-2 py-2">emaanuelmoses@gmail.com</td>
+                            <td class="px-2 py-2">08137540163</td>
+                            <td class="px-2  py-2">3-25-2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="relative top-[130px] lg:ml-[220px] px-5 ml-0">
+           <div>
+            <h1 class="mb-4 text-lg font-semibold text-center">Recently Added Books</h1>
+           </div>
+            <div class="lg:overflow-auto overflow-x-scroll py-3">
+                <table  class="mx-auto">
+                    <thead class="bg-primary">
+                        <tr>
+                            <th class="px-1 py-2">Title</th>
+                            <th class="px-1 py-2">Author</th>
+                            <th class="px-3 py-2">ISBN</th>
+                            <th class="px-1 py-2">Genre</th>
+                            <th class="px-1 py-2">Day Added</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody class="bg-white">
+                        <tr>
+                            <td class="px-2 py-2">Dream Count</td>
+                            <td class="px-2 py-2">Chimamanda ngozi Adichie</td>
+                            <td class="px-2 py-2">9780008685751</td>
+                            <td class="px-2  py-2">Literary Fiction</td>
+                            <td class="px-2  py-2"> 27-03-2026</td>
+    
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <script>
+         function openSidebar( ) {
+            document.querySelector('.sidebar').classList.toggle('left-[0]');
+         }
+    </script>
+</body>
+</html>
