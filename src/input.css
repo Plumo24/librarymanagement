@@ -6,3 +6,11 @@
     --color-body:#CAE9FF;
     --color-tertiary:#BEE9E8
 }
+
+.primary-input{
+    @apply w-full outline-hidden bg-slate-200 py-2 px-4 rounded-2xl;
+}
+
+.active{
+    @apply bg-gradient-to-br from-primary to-secondary min-h-10 font-semibold text-slate-100 flex items-center justify-start;
+}

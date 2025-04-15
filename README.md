@@ -1,6 +1,6 @@
 # Library Information Managment System
 
-This Library Information Management System is designed to manage library resources efficiently. It provides functionality for adding, removing, and updating information about books, members (user), and transactions (borrowing and returning of books).
+This Library Information Management System is designed to manage library resources efficiently. It provides functionality for adding, removing, and updating information about books, users, and activities such as borrowing and returning of books.
 
 ## Modules and Interfaces
 
