@@ -1,20 +1,20 @@
 # Library Information Managment System
 
-This Library Information Management System is designed to manage library resources efficiently. It provides functionality for adding, removing, and updating information about books, users, and activities such as borrowing and returning of books.
+This Library Information Management System is designed to manage library resources efficiently. It provides functionality which includes adding, removing, and updating information about books, users, and activities such as borrowing and returning of books. This can be applied in a real world library
 
 ## Modules and Interfaces
 
-The following modules and interfaces are expected to be developed in this system.
+The following modules and interfaces are expected to be developed in the library management system.
 
 ### Login Module
 
 * Interface:
 	+ Username and Password fields.
-	+ Dropdown to select user role (Admin/User).
+	+ Dropdown to select user role (Admin/User) at the point of login.
 	+ Login button.
 * Features:
 	+ Authentication using credentials.
-	+ Redirect to admin dashboard or user dashboard based on role.
+	+ Redirection  to Admin dashboard or User dashboard based on role.
 
 ### Admin Dashboard
 
@@ -32,7 +32,7 @@ The following modules and interfaces are expected to be developed in this system
 	+ Search & Borrow Books:
 		- Search bar with filters (e.g., title, author, genre).
 		- List of available books with a "Borrow" button.
-	+ Loan Management:
+	+ Book Loan Management:
 		- View borrowed books with due dates.
 		- Return borrowed books.
 
