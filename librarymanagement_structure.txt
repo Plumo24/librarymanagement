@@ -1,0 +1,44 @@
+library-management-system/
+├── api/
+│   ├── acknowledge_rental.php
+│   ├── add_new_book.php
+│   ├── add_new_user.php
+│   ├── borrow_book.php
+│   ├── cancel_request.php
+│   ├── confirm_return_book.php
+│   ├── db_connect.php
+│   ├── db_migration.php
+│   ├── delete_book.php
+│   ├── delete_user.php
+│   ├── logout.php
+│   ├── return_book.php
+│   ├── update_book_record.php
+│   ├── update_user_records.php
+│   ├── user_login.php
+│   └── user_registration.php
+├── app/
+│   ├── images/
+│   ├── page_fragments/
+│   ├── Index.html
+│   ├── add_books.php
+│   ├── add_users.php
+│   ├── admin.php
+│   ├── borrowed_books.php
+│   ├── login.php
+│   ├── manage_books.php
+│   ├── manage_borrowed_books.php
+│   ├── manage_user.php
+│   ├── register.php
+│   ├── template.php
+│   ├── update_books.php
+│   ├── update_user.php
+│   └── user_dashboard.php
+├── src/
+│   └── input.css
+├── .DS_Store
+├── .gitignore
+├── README.md
+├── index.php
+├── localhost.sql
+├── package-lock.json
+└── package.json
