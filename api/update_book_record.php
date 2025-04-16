@@ -13,7 +13,7 @@ $isbn = $_POST['isbn'];
 $genre = $_POST['genre'];
 $publisher = $_POST['publisher'];  
 $published_date = $_POST['published_date'];
-$status = $_POST['status'] ?? 'in_review'; // Default to 'in_review' if not provided
+$status = $_POST['status'] ?? 'Available'; // Default to 'Available' if not provided
 $qty_available = $_POST['qyt_available']; 
 $total_qty = $_POST['total_qty'];
 $photo = $_FILES['cover_photo'] ?? null;
@@ -22,6 +22,7 @@ $sql = "SELECT * FROM books WHERE id=$_POST[book_id]";
 $execQuery = $conn->query($sql);
 $book = $execQuery->fetch_assoc();
 $book_id = $book['id'];
+
 
 if ($photo != null && !empty($photo['tmp_name'])) {
     $newPhoto = uniqid() . '.' . pathinfo($_FILES['cover_photo']['name'], PATHINFO_EXTENSION);
@@ -40,5 +41,9 @@ $sql = "UPDATE books SET title='$title', author='$author', isbn='$isbn', genre='
 $execQuery = $conn->query($sql);
 if ($execQuery) {
     header('Location: ../app/manage_books.php?success=update_successful');
+    exit;
+} else {
+    // header('Location: ../app/manage_books.php?error=update_failed');
+    echo json_encode(['status' => 'error', 'message' => 'Failed to update book']);
     exit;
 }

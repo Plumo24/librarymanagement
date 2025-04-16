@@ -76,7 +76,9 @@ if (!isset($_SESSION['user'])) {
                     echo "<p class='text-red-500 text-sm'>Book borrowing failed. Please try again.</p>";
                 } elseif ($_GET['error'] == 'return_failed') {
                     echo "<p class='text-red-500 text-sm'>Book return failed. Please try again.</p>";
-                }
+                } elseif ($_GET['error'] == 'Book_already_borrowed') {
+                    echo "<p class='text-red-500 text-sm'>You have already borrowed this book.</p>";
+                } 
             }
             ?>
         </section>
@@ -101,11 +103,22 @@ if (!isset($_SESSION['user'])) {
                             $borrowedQuery = "SELECT * FROM rentals WHERE user_id = '$userId' AND book_id = '{$book['id']}'";
                             $borrowedResult = $conn->query($borrowedQuery);
                             if ($borrowedResult->num_rows > 0) {
-                                $borrowed = true;
+                                $rental = $borrowedResult->fetch_assoc();
+                                $issuanceStatus = $rental['issuance_status'];
+                                $status = $rental['status'];
+                                if ($issuanceStatus == 'Approved' && $status == 'Borrowed') {
+                                    $borrowed = true;
+                                } elseif ($issuanceStatus == 'Returned' && $status == 'Returned') {
+                                    $borrowed = false;
+                                } else {
+                                    $borrowed = true;
+                                }
+                            } else {
+                                $borrowed = false;
                             }
                             ?>
                             <button onclick="borrowBook(<?php echo $book['id']; ?>)" class="bg-body px-3 py-2 rounded-lg font-semibold <?php echo $borrowed ? 'cursor-not-allowed opacity-50' : ''; ?>" <?php echo $borrowed ? 'disabled' : ''; ?>>
-                                <?php echo $borrowed ? ($borrowedResult->fetch_assoc()['status'] == 'Returned'  ? 'Waiting for Acknowledgement' : 'Already Borrowed') : 'Borrow'; ?>
+                                <?php echo $borrowed ? ($status == 'Returned'  ? 'Waiting for Acknowledgement' : 'Already Borrowed') : 'Borrow'; ?>
                             </button>
                         </div>
                     </div>

@@ -21,7 +21,7 @@
         // Fetch Dashboard data from the database
         $totalBooksQuery = "SELECT COUNT(*) as total_books FROM books";
         $totalUsersQuery = "SELECT COUNT(*) as total_users FROM users";
-        $totalBorrowedBooksQuery = "SELECT COUNT(*) as total_borrowed_books FROM rentals";
+        $totalBorrowedBooksQuery = "SELECT COUNT(*) as total_borrowed_books FROM rentals WHERE issuance_status  != 'Returned'";
         // Fetch top 5 users in the system
         $user = unserialize($_SESSION['user']);
         $userId = $user['id'];

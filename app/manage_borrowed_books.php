@@ -24,7 +24,7 @@
                             FROM rentals r
                             INNER JOIN books b ON r.book_id = b.id
                             INNER JOIN users u ON r.user_id = u.id
-                            WHERE r.status NOT IN ('returned', 'cancelled')";
+                            ";
     $borrowedBooksResult = $conn->query($borrowedBooksQuery);
     $borrowedBooks = $borrowedBooksResult->fetch_all(MYSQLI_ASSOC);
 
@@ -34,7 +34,7 @@
                                 FROM rentals r
                                 INNER JOIN books b ON r.book_id = b.id
                                 INNER JOIN users u ON r.user_id = u.id
-                                WHERE r.status NOT IN ('returned', 'cancelled') AND b.title LIKE '%$searchVal%' OR u.fullname LIKE '%$searchVal%' OR u.email LIKE '%$searchVal%' OR u.phone LIKE '%$searchVal%'";
+                                 AND b.title LIKE '%$searchVal%' OR u.fullname LIKE '%$searchVal%' OR u.email LIKE '%$searchVal%' OR u.phone LIKE '%$searchVal%'";
         $borrowedBooksResult = $conn->query($borrowedBooksQuery);
         $borrowedBooks = $borrowedBooksResult->fetch_all(MYSQLI_ASSOC);
     }
@@ -131,8 +131,8 @@
                                         <td class="px-3 py-2 min-w-[10%] whitespace-nowrap">
                                             <div class="flex gap-2">
                                                 <button type="button" class="px-2 py-1 bg-secondary <?php echo (strtolower($borrowedBook['issuance_status']) == 'approved' || strtolower($borrowedBook['issuance_status']) == 'returned') ? 'hidden' : ''; ?>" onclick="acknowledgeRental(<?php echo $borrowedBook['id']; ?>)">Acknowledge</button>
-                                                <button type="button" class="px-2 py-1 <?php echo (strtolower($borrowedBook['issuance_status']) == 'approved' || strtolower($borrowedBook['issuance_status']) == 'returned') ? 'border border-primary text-primary' : 'bg-tertiary'; ?>" onclick="returnBook(<?php echo $borrowedBook['id']; ?>)" <?php echo (strtolower($borrowedBook['issuance_status']) == 'approved' || strtolower($borrowedBook['issuance_status']) == 'returned') ? 'disabled' : ''; ?>>
-                                                    <?php echo (strtolower($borrowedBook['issuance_status']) == 'approved' || strtolower($borrowedBook['issuance_status']) == 'returned') ? 'Returned' : 'Return'; ?>
+                                                <button type="button" class="px-2 py-1 <?php echo (strtolower($borrowedBook['issuance_status']) == 'approved' || strtolower($borrowedBook['issuance_status']) == 'returned') ? 'border border-primary text-primary' : 'bg-tertiary'; ?>" onclick="returnBook(<?php echo $borrowedBook['id']; ?>)" <?php echo ((strtolower($borrowedBook['issuance_status']) == 'approved' || strtolower($borrowedBook['issuance_status']) == 'returned') && strtolower($borrowedBook['issuance_status']) == 'returned') ? 'disabled' : ''; ?>>
+                                                    <?php echo (strtolower($borrowedBook['issuance_status']) == 'approved' && strtolower($borrowedBook['issuance_status']) == 'returned') ? 'Returned' : 'Return'; ?>
                                                 </button>
                                             </div>
                                         </td>
