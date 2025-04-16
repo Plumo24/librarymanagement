@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li>
-                    <a id="borrowing_returns_link" href="manage_borrowed_books.php" class="font-medium py-2 px-4 text-sm rounded-lg flex items-center gap-2">
+                    <a id="manage_borrowed_books_link" href="manage_borrowed_books.php" class="font-medium py-2 px-4 text-sm rounded-lg flex items-center gap-2">
                         <i class="fas fa-exchange-alt"></i> 
                         <span>Borrowing & Returns</span>
                     </a>

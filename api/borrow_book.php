@@ -11,6 +11,26 @@ if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
     $borrowQuery = "SELECT * FROM rentals WHERE user_id = '$userId' AND book_id = '$bookId'";
     $borrowResult = $conn->query($borrowQuery);
     if ($borrowResult->num_rows > 0) {
+        $rental = $borrowResult->fetch_assoc();
+        $issuanceStatus = $rental['issuance_status'];
+        $status = $rental['status'];
+        if ($issuanceStatus == 'Returned' && $status == 'Returned') {
+            $rentalQuery = "UPDATE rentals SET status = 'Borrowed', issuance_status = 'Pending', date_out = NOW() WHERE user_id = '$userId' AND book_id = '$bookId'";
+            $rentalResult = $conn->query($rentalQuery);
+            if ($rentalResult) {
+                $updateBookQuery = "UPDATE books SET qty_available = qty_available - 1 WHERE id = '$bookId'";
+                $updateBookResult = $conn->query($updateBookQuery);
+                if ($updateBookResult) {
+                    if ($book['qty_available'] - 1 == 0) {
+                        $updateBookStatusQuery = "UPDATE books SET status = 'Unavailable' WHERE id = '$bookId'";
+                        $conn->query($updateBookStatusQuery);
+                    }
+                    header('Location: ../app/user_dashboard.php?success=Borrow_successful');
+                    exit;
+                }
+            }
+            exit;
+        }
         header('Location: ../app/user_dashboard.php?error=Book_already_borrowed');
         exit;
     }
