@@ -48,17 +48,17 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `author`, `isbn`, `genre`, `publisher`, `published_date`, `status`, `qty_available`, `total_qty`, `cover_photo`) VALUES
-(2, 'Nervous Conditions', 'Tsitsi Dangarembga', '978-0-954-70233-5', 'Bildungsroman', 'Ayebia Clarke Publishing', '2004-10-01', 'Available', 11, 15, 'default.webp'),
-(3, 'Arrow of God', 'Chinua Achebe', '978-0-385-01480-9', 'Historical Fiction', 'Anchor Books', '1989-10-10', 'Available', 10, 15, 'default.webp'),
-(4, 'The Joys of Motherhood', 'Buchi Emecheta', '978-0-435-90525-5', 'Literary Fiction', 'Heinemann (African Writers Series)', '1979-01-01', 'Available', 9, 18, 'default.webp'),
-(5, 'Death and the King’s Horseman', 'Wole Soyinka', '978-0-393-32299-6', 'Drama/Play', 'W.W. Norton & Company', '2002-03-17', 'Available', 9, 18, 'default.webp'),
-(6, 'Things Fall Apart', 'Chinua Achebe', '978-0-385-47454-2', 'Historical Fiction', 'Anchor Books', '1994-08-01', 'Available', 8, 12, 'default.webp'),
-(7, 'Gifted Hands', 'Ben Carson, Cecil Murphey', '978-0-310-54651-1', 'Autobiography', 'Zondervan', '1992-02-01', 'Available', 9, 18, 'default.webp'),
-(8, 'Half of a Yellow Sun', 'Chimamanda Ngozi Adichie', '978-1-4000-9416-5', 'Historical Fiction', 'Anchor Books', '2007-08-04', 'Available', 8, 12, 'default.webp'),
-(9, 'The Hobbit', 'J.R.R. Tolkien', '978-0-261-10221-7', 'Fantasy', 'HarperCollins', '1937-08-21', 'Available', 9, 13, 'default.webp'),
-(10, 'Educated', 'Tara Westover', '978-0-399-59050-4', 'Memoir', 'Random House', '2018-02-20', 'Available', 7, 11, 'default.webp'),
-(11, 'The Night Circus', 'Erin Morgenstern', '978-0-385-53463-5', 'Fantasy', 'Doubleday', '2011-08-13', 'Available', 7, 17, 'default.webp');
-
+(2, 'Joy of mother', 'Buchi Emecheta', '978-0-435-90525-5', 'Literary Fiction', 'Heinemann (African Writers Series)', '1979-01-01', 'Available', 13, 13, 'default.webp'),
+(3, 'Things Fall Apart', 'Chinua Achebe', '978-0-385-47454-2', 'Historical Fiction', 'Anchor Books', '1994-08-01', 'Available', 12, 15, 'default.webp'),
+(4, 'Death and the King’s Horseman', 'Wole Soyinka', '978-0-393-32299-6', 'Drama/Play', 'W.W. Norton & Company', '2002-03-17', 'Available', 5, 7, 'default.webp'),
+(5, 'Gifted Hands', 'Ben Carson, Cecil Murphey', '978-0-310-54651-1', 'Autobiography', 'Zondervan', '1992-02-01', 'Available', 10, 20, 'default.webp'),
+(6, 'Half of a Yellow Sun', 'Chimamanda Ngozi Adichie', '978-1-4000-9416-5', 'Historical Fiction', 'Anchor Books (a division of Random House)', '2007-08-04', 'Available', 8, 10, 'default.webp'),
+(7, 'Arrow of God', 'Chinua Achebe', '978-0-385-01480-9', 'Historical Fiction', 'Anchor Books', '1989-08-10', 'Available', 9, 12, 'default.webp'),
+(8, 'The Beautiful Ones Are Not Yet Born', 'Ayi Kwei Armah', '978-0-435-90041-0', 'Literary Fiction', 'Heinemann (African Writers Series', '1969-01-01', 'Available', 7, 10, 'default.webp'),
+(9, 'Nervous Conditions', 'Tsitsi Dangarembga', '978-0-954-70233-5', 'Bildungsroman', 'Ayebia Clarke Publishing', '2004-10-04', 'Available', 8, 11, 'default.webp'),
+(10, 'Season of Migration to the North', 'Tayeb Salih', '978-1-59017-302-2', 'Literary Fiction', 'New York Review Books', '2009-04-14', 'Available', 8, 16, 'default.webp'),
+(11, 'Weep Not, Child', 'Ngũgĩ wa Thiong’o', '978-0-14-310669-2', 'Historical Fiction', 'Penguin Books', '2012-05-28', 'Available', 8, 13, 'default.webp'),
+(12, 'So Long a Letter', 'Mariama Bâ', '978-0-435-90959-8', 'Epistolary Fiction', 'Heinemann (African Writers Series)', '1981-06-01', 'Available', 8, 14, 'default.webp');
 -- --------------------------------------------------------
 
 --
